@@ -22,7 +22,7 @@ int bubbleSort<T>(IList<T> aList) where T : IComparable
     {
         for (int j = 0; j < aList.Count - (i + 1); j++)
         {
-            int compare = aList[j].CompareTo(j + 1);
+            int compare = aList[j].CompareTo(aList[j + 1]);
             if (compare == 1)
             {
                 T chng = aList[j + 1];
@@ -35,14 +35,14 @@ int bubbleSort<T>(IList<T> aList) where T : IComparable
 }
 
 bubbleSort(mynums);
-// bubbleSort(mycars);
+bubbleSort(mycars);
 
 for (int i = 0; i < mynums.Count; i++)
 {
     Console.WriteLine(mynums[i]);
 }
 
-// foreach (string car in mycars)
-// {
-//     Console.WriteLine(car);
-// }
+foreach (string car in mycars)
+{
+    Console.WriteLine(car);
+}
