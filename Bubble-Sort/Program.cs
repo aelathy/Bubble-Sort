@@ -16,15 +16,16 @@ List<string> mycars = new List<string> { "Volvo", "Ram", "Acura", "Ford", "Honda
 
 
 
-int bubbleSort(List<int> aList)
+int bubbleSort<T>(IList<T> aList) where T : IComparable
 {
     for (int i = 0; i < aList.Count - 1; i++)
     {
         for (int j = 0; j < aList.Count - (i + 1); j++)
         {
-            if (aList[j] > aList[j + 1])
+            int compare = aList[j].CompareTo(j + 1);
+            if (compare == 1)
             {
-                int chng = aList[j + 1];
+                T chng = aList[j + 1];
                 aList[j + 1] = aList[j];
                 aList[j] = chng;
             }
